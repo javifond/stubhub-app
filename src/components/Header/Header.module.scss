@@ -1,0 +1,45 @@
+// Header
+
+// Variables
+$header-height: 56px;
+$logo-size: 42px;
+$font-size: 12px;
+$link-item-line-height: 51px;
+
+// Blocks
+.header {
+  background-color: $header-bg-color;
+  background-image: url("src/assets/img/line_color.png");
+  background-size: 100% $gutter-xs;
+  background-position: 50% 0%;
+  background-repeat: no-repeat;
+  border-bottom: 1px solid $header-border;
+  height: $header-height;
+  font-size: $font-size;
+}
+
+.container {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+.logo {
+  height: $logo-size;
+  padding-left: $gutter-xs;
+  width: 100%;
+}
+
+.navigation {
+  display: flex;
+  margin-top: $gutter-xs;
+}
+
+.linkItem {
+  line-height: $link-item-line-height;
+  padding: 0 $gutter;
+
+  &:hover {
+    background-color: $link-hover-color;
+  }
+}

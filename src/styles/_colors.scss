@@ -1,5 +1,22 @@
 // Colors - Theme
 
 // Color Palette
+$_light: #fff;
+$_dark: #000;
+$_text-color: #888;
+$_app-background: #fff;
+$_link-color: #000;
+$_link-hover-color: #ddd;
+$_header-bg-color: #f5f5f5;
+$_header-border: #ddd;
 
 // CSS Variables definition for theming
+// c- stands for custom-
+$light: var(--c-light, $_light);
+$dark: var(--c-dark, $_dark);
+$text-color: var(--c-text-color, $_text-color);
+$app_background: var(--c-app_background, $_app_background);
+$link-color: var(--c-link-color, $_link-color);
+$link-hover-color: var(--c-link-hover-color, $_link-hover-color);
+$header-bg-color: var(--c-header-bg-color, $_header-bg-color);
+$header-border: var(--c-header-border, $_header-border);
