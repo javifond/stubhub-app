@@ -1,5 +1,5 @@
 // Event Thumbnail
-// TODO[JB]: Rework these styles, they are convoluted.
+
 // Variables
 
 // Block
@@ -16,7 +16,7 @@
   box-sizing: border-box;
 }
 
-.eventItem .eventThumb .eventTitle {
+.eventTitle {
   box-sizing: border-box;
   position: absolute;
   bottom: 5px;
@@ -31,7 +31,7 @@
   font-weight: 600;
 }
 
-.eventItem .eventThumb .eventImage {
+.eventImage {
   width: 100%;
 }
 
@@ -42,18 +42,14 @@
   line-height: 20px;
 }
 
-.eventDetails .eventTitle {
-  font-weight: 600;
-}
-
-.eventDetails .eventActions {
+.eventActions {
   overflow: hidden;
   text-align: right;
   margin-bottom: 5px;
   margin-top: 5px;
 }
 
-.eventDetails .eventActions .eventBuyButton {
+.eventBuyButton {
   border-radius: 0;
   background-color: #80c500;
   background-image: none;
@@ -64,10 +60,10 @@
   transition: all 0.2s ease-out;
   text-shadow: none;
   white-space: nowrap;
-}
 
-.eventDetails .eventActions .eventBuyButton:hover {
-  background-color: #379f15;
+  &:hover {
+    background-color: #379f15;
+  }
 }
 
 .iconWrapper {
