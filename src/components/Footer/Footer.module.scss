@@ -1,0 +1,59 @@
+// Footer
+
+// Variables
+$footer-max-width: 1170px;
+
+//Blocks
+.footer {
+  background-color: $footer-bg-color;
+  padding: $gutter 0;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: $footer-max-width;
+  width: 95%;
+}
+
+.block {
+  font-size: 90%;
+  margin-bottom: $gutter;
+
+  &_inline {
+    display: flex;
+    gap: $gutter;
+  }
+}
+
+.label {
+  line-height: 1.5em;
+  margin-right: $gutter-s;
+}
+
+.linksList {
+  display: flex;
+  gap: $gutter-s;
+}
+
+.link {
+  align-items: center;
+  display: flex;
+  gap: $gutter-s;
+
+  & a {
+    &:hover {
+      color: $footer-link-hover-color;
+    }
+  }
+
+  &:not(:last-child) {
+    &::after {
+      color: $dark;
+      content: "|";
+    }
+  }
+}
+
+.iconLink {
+  margin-right: $gutter-xs;
+}
