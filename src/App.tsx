@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, useRoutes } from "react-router-dom";
 import { APP_ROUTES } from "./routes/routes.constants";
 import Header from "./components/Header/Header";
-import HomePage from "./pages/HomePage";
+import HomePage from "./pages/HomePage/HomePage";
 import Footer from "./components/Footer/Footer";
 
 import "./App.module.scss";

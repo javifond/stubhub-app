@@ -1,0 +1,23 @@
+// Home Page
+
+// Variables
+$bigBox-margin-top: 54px;
+$bigBox-min-height: 330px;
+
+// Block
+.bigBox {
+  background-image: url("src/assets/img/big_box.jpg");
+  background-repeat: no-repeat;
+  background-position: right top;
+  background-size: cover;
+  margin-top: $bigBox-margin-top;
+  min-height: $bigBox-min-height;
+  width: 100%;
+}
+
+.container {
+  display: flex;
+  margin: 0 auto;
+  max-width: $content-max-width;
+  width: 95%;
+}
