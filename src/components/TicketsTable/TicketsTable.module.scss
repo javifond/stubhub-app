@@ -1,0 +1,23 @@
+// Tickets Table
+
+// Variables
+
+// Blocks
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.table thead {
+  border-bottom: 1px solid #888;
+}
+
+.table th {
+  font-size: 9px;
+  text-transform: uppercase;
+  vertical-align: top;
+  padding: 5px;
+  color: black;
+  font-weight: 600;
+}
