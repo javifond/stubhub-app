@@ -11,6 +11,8 @@ $_header-bg-color: #f5f5f5;
 $_header-border: #ddd;
 $_footer-bg-color: #f5f5f5;
 $_footer-link-hover-color: #00a8ff;
+$_searchBox-border-color: #ccc;
+$_searchBox-button-bg: #0f82f5;
 
 // CSS Variables definition for theming
 // c- stands for custom-
@@ -27,3 +29,8 @@ $footer-link-hover-color: var(
   --c-footer-link-hover-color,
   $_footer-link-hover-color
 );
+$searchBox-border-color: var(
+  --c-searchBox-border-color,
+  $_searchBox-border-color
+);
+$searchBox-button-bg: var(--c-searchBox-button-bg, $_searchBox-button-bg);
