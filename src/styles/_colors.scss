@@ -9,6 +9,8 @@ $_link-color: #000;
 $_link-hover-color: #ddd;
 $_header-bg-color: #f5f5f5;
 $_header-border: #ddd;
+$_footer-bg-color: #f5f5f5;
+$_footer-link-hover-color: #00a8ff;
 
 // CSS Variables definition for theming
 // c- stands for custom-
@@ -20,3 +22,8 @@ $link-color: var(--c-link-color, $_link-color);
 $link-hover-color: var(--c-link-hover-color, $_link-hover-color);
 $header-bg-color: var(--c-header-bg-color, $_header-bg-color);
 $header-border: var(--c-header-border, $_header-border);
+$footer-bg-color: var(--c-footer-bg-color, $_footer-bg-color);
+$footer-link-hover-color: var(
+  --c-footer-link-hover-color,
+  $_footer-link-hover-color
+);
