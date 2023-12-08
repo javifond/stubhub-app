@@ -1,0 +1,77 @@
+// Event Thumbnail
+// TODO[JB]: Rework these styles, they are convoluted.
+// Variables
+
+// Block
+.eventListItem {
+  width: 24%;
+  float: left;
+  margin: 0.5%;
+}
+
+.eventItem {
+  position: relative;
+  width: 100%;
+  display: block;
+  box-sizing: border-box;
+}
+
+.eventItem .eventThumb .eventTitle {
+  box-sizing: border-box;
+  position: absolute;
+  bottom: 5px;
+  background-color: black;
+  background-color: rgba(1, 1, 1, 0.7);
+  display: block;
+  width: 100%;
+  padding: 5px;
+  color: white;
+  font-size: 14px;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 600;
+}
+
+.eventItem .eventThumb .eventImage {
+  width: 100%;
+}
+
+.eventDetails {
+  margin-left: 5px;
+  padding-top: 5px;
+  font-size: 12px;
+  line-height: 20px;
+}
+
+.eventDetails .eventTitle {
+  font-weight: 600;
+}
+
+.eventDetails .eventActions {
+  overflow: hidden;
+  text-align: right;
+  margin-bottom: 5px;
+  margin-top: 5px;
+}
+
+.eventDetails .eventActions .eventBuyButton {
+  border-radius: 0;
+  background-color: #80c500;
+  background-image: none;
+  border: none;
+  color: #ffffff;
+  font-size: 100%;
+  padding: 3px 8px;
+  transition: all 0.2s ease-out;
+  text-shadow: none;
+  white-space: nowrap;
+}
+
+.eventDetails .eventActions .eventBuyButton:hover {
+  background-color: #379f15;
+}
+
+.iconWrapper {
+  align-items: center;
+  display: flex;
+  gap: $gutter-xs;
+}
