@@ -1,34 +1,43 @@
 import styles from "./TicketActions.module.scss";
 
-const TicketActions = () => {
+type TicketActionsProps = {
+  ticketStatus: boolean;
+  setTicketStatus: React.Dispatch<React.SetStateAction<boolean>>;
+};
+
+const TicketActions = ({
+  ticketStatus,
+  setTicketStatus,
+}: TicketActionsProps) => {
   return (
     <div className={styles.ticketItem}>
-      <ul className={styles.ticketActions}>
-        <li className={styles.actionItem}>
-          <a href="#">
-            <i className="fa fa-files-o"></i>
-            <span>Duplicate</span>
-          </a>
-        </li>
-        <li className={styles.actionItem}>
-          <a href="#">
-            <i className="fa fa-trash"></i>
-            <span>Remove</span>
-          </a>
-        </li>
-        <li className={styles.actionItem}>
-          <a href="#">
-            <i className="fa fa-eye"></i>
-            <span>Activate</span>
-          </a>
-        </li>
-        <li className={styles.actionItem}>
-          <a href="#">
-            <i className="fa fa-eye-slash"></i>
-            <span>Deactivate</span>
-          </a>
-        </li>
-      </ul>
+      <button className={styles.button}>
+        <i className="fa fa-files-o"></i>
+        <span className={styles.iconText}>Duplicate</span>
+      </button>
+
+      <button className={styles.button}>
+        <i className="fa fa-trash"></i>
+        <span className={styles.iconText}>Remove</span>
+      </button>
+
+      <button
+        className={styles.button}
+        disabled={ticketStatus}
+        onClick={() => setTicketStatus(true)}
+      >
+        <i className="fa fa-eye"></i>
+        <span className={styles.iconText}>Activate</span>
+      </button>
+
+      <button
+        className={styles.button}
+        disabled={!ticketStatus}
+        onClick={() => setTicketStatus(false)}
+      >
+        <i className="fa fa-eye-slash"></i>
+        <span className={styles.iconText}>Deactivate</span>
+      </button>
     </div>
   );
 };
