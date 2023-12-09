@@ -21,7 +21,9 @@ export const FetchCategoriesProvider = ({ children }: ChildrenType) => {
 
   useEffect(() => {
     const fetchCategories = async (): Promise<ICategory[]> => {
-      const categories = await fetch(API_ENDPOINTS.CATEGORIES)
+      const categories = await fetch(
+        `${API_ENDPOINTS.DOMAIN}/${API_ENDPOINTS.CATEGORIES}`
+      )
         .then((res) => {
           if (!res.ok) {
             throw new Error(
