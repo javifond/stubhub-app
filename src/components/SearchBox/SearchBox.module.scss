@@ -14,18 +14,30 @@ $button-font-size: 1.5em;
   width: 100%;
 }
 
-.input {
-  appearance: none;
-  border: 1px solid $searchBox-border-color;
-  border-radius: 1px;
-  box-shadow: 1px 2px 5px rgba($dark, $input-shadow-opacity);
-  display: inline-block;
-  font-size: $input-font-size;
+.typeAhead {
   height: 100%;
-  overflow: hidden;
-  padding-left: $gutter;
-  text-overflow: ellipsis;
-  width: 100%;
+
+  input {
+    appearance: none;
+    border: 1px solid $searchBox-border-color;
+    border-radius: 1px;
+    box-shadow: 1px 2px 5px rgba($dark, $input-shadow-opacity);
+    display: inline-block;
+    font-size: $input-font-size;
+    overflow: hidden;
+    padding-left: $gutter;
+    text-overflow: ellipsis;
+    width: 100%;
+  }
+}
+
+:global {
+  .dropdown-menu {
+    background-color: $light;
+    display: flex !important;
+    flex-direction: column;
+    padding: $gutter;
+  }
 }
 
 .button {
