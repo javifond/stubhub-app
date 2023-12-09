@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { IEvent } from "../../interfaces/IEvent";
 import { ITicket } from "../../interfaces/ITicket";
 import { transformDateFormat } from "../../utilities/transformDateFormat";
@@ -14,6 +15,7 @@ const TicketListItem = ({ event, ticket }: TicketListItemProps) => {
   const { thumbnailImageUrl, title, date, venueName, city, country } = event;
   const formattedDate = transformDateFormat(date);
   const { status } = ticket;
+  const [ticketStatus, setTicketStatus] = useState<boolean>(status);
 
   return (
     <li className={styles.ticketListItem}>
@@ -28,14 +30,17 @@ const TicketListItem = ({ event, ticket }: TicketListItemProps) => {
         </div>
         <strong
           className={`${styles.status} ${
-            status ? styles.isActive : styles.isInactive
+            ticketStatus ? styles.isActive : styles.isInactive
           }`}
         >
-          {status ? "Active" : "Inactive"}
+          {ticketStatus ? "Active" : "Inactive"}
         </strong>
       </div>
 
-      <TicketActions />
+      <TicketActions
+        ticketStatus={ticketStatus}
+        setTicketStatus={setTicketStatus}
+      />
     </li>
   );
 };
