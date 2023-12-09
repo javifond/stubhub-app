@@ -43,3 +43,11 @@ $link-item-line-height: 51px;
     background-color: $link-hover-color;
   }
 }
+
+.button {
+  @extend .linkItem;
+
+  background-color: transparent;
+  border: none;
+  color: $dark;
+}
