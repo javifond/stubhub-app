@@ -4,4 +4,5 @@ export enum APP_ROUTES {
   CATEGORIES = "categories/:id/events",
   EVENT = "event",
   ACCOUNT = "account",
+  TICKETS = "tickets",
 }

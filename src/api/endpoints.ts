@@ -6,4 +6,5 @@ export const API_ENDPOINTS = {
   DOMAIN: "https://fake-tb-api.onrender.com",
   CATEGORIES: "categories",
   EVENTS: "events",
+  TICKETS: "tickets",
 };

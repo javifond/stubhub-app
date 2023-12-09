@@ -1,19 +1,25 @@
 import { IEvent } from "../../interfaces/IEvent";
 import { transformDateFormat } from "../../utilities/transformDateFormat";
+import { Link } from "react-router-dom";
+import { API_ENDPOINTS } from "../../api/endpoints";
 
 import styles from "./EventThumbnail.module.scss";
 
 type EventThumbnailProps = {
   event: IEvent;
 };
+
 const EventThumbnail = ({ event }: EventThumbnailProps) => {
-  const { title, thumbnailImageUrl, venueName, city, date } = event;
+  const { id, title, thumbnailImageUrl, venueName, city, date } = event;
   const formattedDate = transformDateFormat(date);
 
   return (
     <li className={styles.eventListItem}>
       <div className={styles.eventItem}>
-        <a className={styles.eventThumb} href="#">
+        <Link
+          to={`/${API_ENDPOINTS.TICKETS}?eventId=${id}&status=true`}
+          className={styles.eventThumb}
+        >
           <div className={styles.eventTitle}>
             <strong>{title}</strong>
           </div>
@@ -22,7 +28,7 @@ const EventThumbnail = ({ event }: EventThumbnailProps) => {
             src={thumbnailImageUrl}
             alt={title}
           />
-        </a>
+        </Link>
       </div>
       <div className={styles.eventDetails}>
         <div>
