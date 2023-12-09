@@ -3,5 +3,7 @@
  * the api endpoints.
  */
 export const API_ENDPOINTS = {
-  CATEGORIES: "https://fake-tb-api.onrender.com/categories",
+  DOMAIN: "https://fake-tb-api.onrender.com",
+  CATEGORIES: "categories",
+  EVENTS: "events",
 };
