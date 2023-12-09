@@ -14,6 +14,8 @@ $_footer-link-hover-color: #00a8ff;
 $_searchBox-border-color: #ccc;
 $_searchBox-button-bg: #0f82f5;
 $_searchBox-disabled-button-bg: #888;
+$_isActive: #2c982c;
+$_isInactive: #d73f3f;
 
 // CSS Variables definition for theming
 // c- stands for custom-
@@ -39,3 +41,5 @@ $searchBox-disabled-button-bg: var(
   --c-searchBox-disabled-button-bg,
   $_searchBox-disabled-button-bg
 );
+$isActive: var(--c-isActive, $_isActive);
+$isInactive: var(--c-isInactive, $_isInactive);
