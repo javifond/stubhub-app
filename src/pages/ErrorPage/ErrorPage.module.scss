@@ -1,0 +1,19 @@
+// Error Page
+
+// Variables
+
+// Block
+.container {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: $gutter;
+  padding: $gutter-xl;
+}
+
+.link {
+  &:hover {
+    color: $footer-link-hover-color;
+  }
+}

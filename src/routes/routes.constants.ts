@@ -5,4 +5,5 @@ export enum APP_ROUTES {
   EVENT = "event",
   ACCOUNT = "account",
   TICKETS = "tickets",
+  NOT_FOUND = "*",
 }
