@@ -27,7 +27,7 @@ const AccountPage = () => {
       <div className={styles.container}>
         <SearchBox />
         <h2 className={styles.title}>Tickets</h2>
-        <TicketList events={events} />
+        <TicketList events={events} tickets={tickets} />
       </div>
     </main>
   );

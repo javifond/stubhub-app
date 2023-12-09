@@ -50,3 +50,15 @@
   content: "-";
   margin: 0 5px;
 }
+
+.status {
+  padding: 0 $gutter-s;
+}
+
+.isActive {
+  color: $isActive;
+}
+
+.isInactive {
+  color: $isInactive;
+}
