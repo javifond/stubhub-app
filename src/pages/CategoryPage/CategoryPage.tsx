@@ -19,7 +19,7 @@ const CategoryPage = () => {
       <div className={styles.container}>
         <SearchBox />
 
-        <ul>
+        <ul className={styles.wrapper}>
           {events.map((event, i) => (
             <EventThumbnail key={i} event={event} />
           ))}
