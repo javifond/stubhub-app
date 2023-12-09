@@ -1,4 +1,5 @@
 import { IEvent } from "../../interfaces/IEvent";
+import { ITicket } from "../../interfaces/ITicket";
 import { transformDateFormat } from "../../utilities/transformDateFormat";
 import TicketActions from "../TicketActions/TicketActions";
 
@@ -6,11 +7,13 @@ import styles from "./TicketListItem.module.scss";
 
 type TicketListItemProps = {
   event: IEvent;
+  ticket: ITicket;
 };
 
-const TicketListItem = ({ event }: TicketListItemProps) => {
+const TicketListItem = ({ event, ticket }: TicketListItemProps) => {
   const { thumbnailImageUrl, title, date, venueName, city, country } = event;
   const formattedDate = transformDateFormat(date);
+  const { status } = ticket;
 
   return (
     <li className={styles.ticketListItem}>
@@ -23,6 +26,13 @@ const TicketListItem = ({ event }: TicketListItemProps) => {
           </time>
           <span>{`${venueName}, ${city}, ${country}`}</span>
         </div>
+        <strong
+          className={`${styles.status} ${
+            status ? styles.isActive : styles.isInactive
+          }`}
+        >
+          {status ? "Active" : "Inactive"}
+        </strong>
       </div>
 
       <TicketActions />
