@@ -6,6 +6,7 @@ import CategoryPage from "./pages/CategoryPage/CategoryPage";
 import Footer from "./components/Footer/Footer";
 import EventPage from "./pages/EventPage/EventPage";
 import AccountPage from "./pages/AccountPage/AccountPage";
+import { FetchCategoriesProvider } from "./context/FetchCategoriesContext";
 
 import "./App.module.scss";
 
@@ -22,13 +23,13 @@ function Routes() {
 
 function App() {
   return (
-    <>
-      <Router>
-        <Header />
+    <Router>
+      <Header />
+      <FetchCategoriesProvider>
         <Routes />
-        <Footer />
-      </Router>
-    </>
+      </FetchCategoriesProvider>
+      <Footer />
+    </Router>
   );
 }
 
