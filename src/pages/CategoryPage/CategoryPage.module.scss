@@ -8,3 +8,8 @@
   max-width: $content-max-width;
   width: 95%;
 }
+
+.wrapper {
+  display: flex;
+  flex-wrap: wrap;
+}
