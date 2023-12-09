@@ -14,7 +14,7 @@ function Routes() {
   const element = useRoutes([
     { path: APP_ROUTES.HOME, element: <HomePage /> },
     { path: APP_ROUTES.CATEGORIES, element: <CategoryPage /> },
-    { path: APP_ROUTES.EVENT, element: <EventPage /> },
+    { path: APP_ROUTES.TICKETS, element: <EventPage /> },
     { path: APP_ROUTES.ACCOUNT, element: <AccountPage /> },
   ]);
 
