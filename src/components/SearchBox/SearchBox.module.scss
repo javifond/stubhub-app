@@ -34,9 +34,11 @@ $button-font-size: 1.5em;
 :global {
   .dropdown-menu {
     background-color: $light;
+    box-shadow: $gutter-xs $gutter-xs $gutter-s $dark;
     display: flex !important;
     flex-direction: column;
     padding: $gutter;
+    z-index: 2;
   }
 }
 
