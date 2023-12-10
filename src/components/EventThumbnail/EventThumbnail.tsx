@@ -14,7 +14,7 @@ const EventThumbnail = ({ event }: EventThumbnailProps) => {
   const formattedDate = transformDateFormat(date);
 
   return (
-    <li className={styles.eventListItem}>
+    <li>
       <div className={styles.eventItem}>
         <Link
           to={`/${API_ENDPOINTS.TICKETS}?eventId=${id}&status=true`}
@@ -31,8 +31,8 @@ const EventThumbnail = ({ event }: EventThumbnailProps) => {
         </Link>
       </div>
       <div className={styles.eventDetails}>
-        <div>
-          <span itemProp="name">{venueName}</span>
+        <div className={styles.venue}>
+          <span>{venueName}</span>
         </div>
         <div>
           <span className={styles.iconWrapper}>

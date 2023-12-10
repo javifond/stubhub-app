@@ -1,34 +1,40 @@
 // Event Thumbnail
 
 // Variables
+$image-width: 180px;
+$event-detail-font-size: 12px;
+$event-detail-line-height: 20px;
+$event-title-font-size: 14px;
+$event-tittle-ribbon-height: 64px;
+$animation-delay: 0.4s;
+$scale-amount: 1.05;
 
 // Block
-.eventListItem {
-  width: 24%;
-  float: left;
-  margin: 0.5%;
-}
-
 .eventItem {
   position: relative;
-  width: 100%;
-  display: block;
-  box-sizing: border-box;
+  transition: transform $animation-delay;
+  will-change: transform;
+
+  &:hover {
+    transform: scale($scale-amount);
+  }
 }
 
 .eventTitle {
-  box-sizing: border-box;
-  position: absolute;
-  bottom: 5px;
-  background-color: black;
   background-color: rgba(1, 1, 1, 0.7);
-  display: block;
+  display: flex;
+  align-items: center;
+  bottom: 0;
+  color: $light;
+  font-size: $event-title-font-size;
+  height: $event-tittle-ribbon-height;
+  padding: $gutter-s;
+  position: absolute;
   width: 100%;
-  padding: 5px;
-  color: white;
-  font-size: 14px;
-  font-family: "Open Sans", sans-serif;
-  font-weight: 600;
+
+  strong {
+    @include ellipsis;
+  }
 }
 
 .eventImage {
@@ -36,17 +42,18 @@
 }
 
 .eventDetails {
-  margin-left: 5px;
-  padding-top: 5px;
-  font-size: 12px;
-  line-height: 20px;
+  padding: $gutter-xs;
+  font-size: $event-detail-font-size;
+  line-height: $event-detail-line-height;
+}
+
+.venue {
+  @include ellipsis;
 }
 
 .eventActions {
-  overflow: hidden;
+  padding: $gutter-xs;
   text-align: right;
-  margin-bottom: 5px;
-  margin-top: 5px;
 }
 
 .eventBuyButton {
