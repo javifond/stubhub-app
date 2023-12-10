@@ -19,7 +19,7 @@ const CategoryPage = () => {
       <SearchBox />
       {loading && <Loader />}
       {!loading && (
-        <ul className={styles.wrapper}>
+        <ul className={styles.thumbnailsContainer}>
           {events.map((event, i) => (
             <EventThumbnail key={i} event={event} />
           ))}

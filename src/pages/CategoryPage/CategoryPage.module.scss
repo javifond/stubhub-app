@@ -1,6 +1,7 @@
 // Category Page
 
 // Variables
+$thumbnailMinWidth: 180px;
 
 // Block
 .container {
@@ -9,7 +10,12 @@
   width: 95%;
 }
 
-.wrapper {
-  display: flex;
-  flex-wrap: wrap;
+.thumbnailsContainer {
+  display: grid;
+  gap: $gutter;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(min(100%, $thumbnailMinWidth), 1fr)
+  );
+  margin-bottom: $gutter;
 }
