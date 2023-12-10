@@ -2,27 +2,29 @@ import { useParams } from "react-router-dom";
 import { useFetchEventsByCategory } from "../../hooks/useFetchEventsByCategory";
 import SearchBox from "../../components/SearchBox/SearchBox";
 import EventThumbnail from "../../components/EventThumbnail/EventThumbnail";
-
+import Loader from "../../components/Loader/Loader";
 import styles from "./CategoryPage.module.scss";
 
 const CategoryPage = () => {
   const { id } = useParams();
   const { events, loading, error } = useFetchEventsByCategory(id);
 
-  // TODO[JB]: Implement a better loading and error UX/UI,
-  // as if the data takes longer to load or there is an error,
+  // TODO[JB]: Implement a better error UX/UI,
   // the component will not appear.
-  if (!events || loading || error) return;
+  // Maybe a toast could be a good option.
+  if (!events || error) return;
 
   return (
     <div className={styles.container}>
       <SearchBox />
-
-      <ul className={styles.wrapper}>
-        {events.map((event, i) => (
-          <EventThumbnail key={i} event={event} />
-        ))}
-      </ul>
+      {loading && <Loader />}
+      {!loading && (
+        <ul className={styles.wrapper}>
+          {events.map((event, i) => (
+            <EventThumbnail key={i} event={event} />
+          ))}
+        </ul>
+      )}
     </div>
   );
 };

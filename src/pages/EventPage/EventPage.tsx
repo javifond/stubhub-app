@@ -2,6 +2,7 @@ import { useQuery } from "../../hooks/useQuery";
 import { useFetchTicketsByEvent } from "../../hooks/useFetchTicketsByEvent";
 import { useFetchEventById } from "../../hooks/useFetchEventById";
 import TicketsTable from "../../components/TicketsTable/TicketsTable";
+import Loader from "../../components/Loader/Loader";
 
 import styles from "./EventPage.module.scss";
 
@@ -10,15 +11,20 @@ const EventPage = () => {
   const { event } = useFetchEventById(eventId);
   const { tickets, loading, error } = useFetchTicketsByEvent(eventId);
 
-  // TODO[JB]: Implement a better loading and error UX/UI,
-  // as if the data takes longer to load or there is an error,
+  // TODO[JB]: Implement a better error UX/UI,
   // the component will not appear.
-  if (!tickets || loading || error) return;
+  // Maybe a toast could be a good option.
+  if (!tickets || error) return;
 
   return (
     <div className={styles.container}>
-      {event && <h2 className={styles.title}>{event.title}</h2>}
-      <TicketsTable tickets={tickets} />
+      {loading && <Loader />}
+      {!loading && (
+        <>
+          {event && <h2 className={styles.title}>{event.title}</h2>}
+          <TicketsTable tickets={tickets} />
+        </>
+      )}
     </div>
   );
 };
