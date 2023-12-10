@@ -1,0 +1,21 @@
+// Loader
+
+// Variables
+$spinner-icon-size: 64px;
+$animation-duration: 1.25s;
+
+// Blocks
+.spinner {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.icon {
+  animation: rotateOut $animation-duration infinite;
+  display: flex;
+  font-size: $spinner-icon-size;
+  height: $spinner-icon-size;
+  width: $spinner-icon-size;
+}
