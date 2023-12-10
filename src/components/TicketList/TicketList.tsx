@@ -1,7 +1,11 @@
 import { IEvent } from "../../interfaces/IEvent";
 import { ITicket } from "../../interfaces/ITicket";
 import TicketListItem from "../TicketListItem/TicketListItem";
-import { filterTicketByEventId } from "../../utilities/filterTicketByEventId";
+import { useEffect, useReducer } from "react";
+import { TicketListReducer } from "../../reducers/TicketListReducer/TicketListReducer";
+import { TicketListReducerActions } from "../../reducers/TicketListReducer/TicketListReducer.actions";
+import { mergeSellerEventsWithTickets } from "../../utilities/mergeSellerEventsWithTickets";
+import { ISellerEvent } from "../../interfaces/ISellerEvent";
 
 type TicketListProps = {
   events: IEvent[];
@@ -9,13 +13,27 @@ type TicketListProps = {
 };
 
 const TicketList = ({ events, tickets }: TicketListProps) => {
+  const [state, dispatch] = useReducer(TicketListReducer, {});
+
+  useEffect(() => {
+    const sellerEvents: ISellerEvent[] = mergeSellerEventsWithTickets(
+      events,
+      tickets
+    );
+
+    dispatch({
+      type: TicketListReducerActions.UPDATE_LIST,
+      payload: { events: sellerEvents },
+    });
+  }, [events, tickets]);
+
   return (
     <ul>
-      {events.map((event, i) => {
-        const ticket = filterTicketByEventId(tickets, event.id) as ITicket;
-
-        return <TicketListItem key={i} event={event} ticket={ticket} />;
-      })}
+      {state &&
+        state.events &&
+        state.events.map((event, i) => {
+          return <TicketListItem key={i} event={event} dispatch={dispatch} />;
+        })}
     </ul>
   );
 };
