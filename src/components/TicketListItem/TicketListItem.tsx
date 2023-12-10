@@ -1,20 +1,28 @@
 import { useState } from "react";
-import { IEvent } from "../../interfaces/IEvent";
-import { ITicket } from "../../interfaces/ITicket";
+import { ITicketListAction } from "../../interfaces/ITicketListAction";
 import { transformDateFormat } from "../../utilities/transformDateFormat";
 import TicketActions from "../TicketActions/TicketActions";
+import { ISellerEvent } from "../../interfaces/ISellerEvent";
 
 import styles from "./TicketListItem.module.scss";
 
 type TicketListItemProps = {
-  event: IEvent;
-  ticket: ITicket;
+  event: ISellerEvent;
+  dispatch: React.Dispatch<ITicketListAction>;
 };
 
-const TicketListItem = ({ event, ticket }: TicketListItemProps) => {
-  const { thumbnailImageUrl, title, date, venueName, city, country } = event;
+const TicketListItem = ({ event, dispatch }: TicketListItemProps) => {
+  const {
+    id,
+    thumbnailImageUrl,
+    title,
+    date,
+    venueName,
+    city,
+    country,
+    status,
+  } = event;
   const formattedDate = transformDateFormat(date);
-  const { status } = ticket;
   const [ticketStatus, setTicketStatus] = useState<boolean>(status);
 
   return (
@@ -38,8 +46,10 @@ const TicketListItem = ({ event, ticket }: TicketListItemProps) => {
       </div>
 
       <TicketActions
+        eventId={id}
         ticketStatus={ticketStatus}
         setTicketStatus={setTicketStatus}
+        dispatch={dispatch}
       />
     </li>
   );
