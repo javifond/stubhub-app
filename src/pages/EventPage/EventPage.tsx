@@ -16,12 +16,10 @@ const EventPage = () => {
   if (!tickets || loading || error) return;
 
   return (
-    <main>
-      <div className={styles.container}>
-        {event && <h2 className={styles.title}>{event.title}</h2>}
-        <TicketsTable tickets={tickets} />
-      </div>
-    </main>
+    <div className={styles.container}>
+      {event && <h2 className={styles.title}>{event.title}</h2>}
+      <TicketsTable tickets={tickets} />
+    </div>
   );
 };
 

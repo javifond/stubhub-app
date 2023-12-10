@@ -23,13 +23,11 @@ const AccountPage = () => {
   }, [tickets]);
 
   return (
-    <main>
-      <div className={styles.container}>
-        <SearchBox />
-        <h2 className={styles.title}>Tickets</h2>
-        <TicketList events={events} tickets={tickets} />
-      </div>
-    </main>
+    <div className={styles.container}>
+      <SearchBox />
+      <h2 className={styles.title}>Tickets</h2>
+      <TicketList events={events} tickets={tickets} />
+    </div>
   );
 };
 

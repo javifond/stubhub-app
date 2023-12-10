@@ -6,7 +6,10 @@ $_gutter-l: 24px;
 $_gutter-xl: 32px;
 $_gutter-xxl: 64px;
 
+// APP variables
 $_content-max-width: 1170px;
+$_header-height: 56px;
+$_footer-min-height: 180px;
 
 // CSS Variables definition for spacing
 // c- stands for custom-
@@ -18,3 +21,5 @@ $gutter-xl: var(--c-gutter-xl, $_gutter-xl);
 $gutter-xxl: var(--c-gutter-xxl, $_gutter-xxl);
 
 $content-max-width: var(--c-content-max-width, $_content-max-width);
+$header-height: var(--c-header-height, $_header-height);
+$footer-min-height: var(--c-footer-min-height, $_footer-min-height);

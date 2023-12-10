@@ -12,7 +12,7 @@ import AccountPage from "./pages/AccountPage/AccountPage";
 import ErrorPage from "./pages/ErrorPage/ErrorPage";
 import { ProtectedRoute } from "./routes/ProtectedRoute";
 
-import "./App.module.scss";
+import styles from "./App.module.scss";
 
 function Routes() {
   const { userId } = useLoggedUser();
@@ -41,7 +41,9 @@ function App() {
       <Router>
         <Header />
         <FetchCategoriesProvider>
-          <Routes />
+          <main className={styles.main}>
+            <Routes />
+          </main>
         </FetchCategoriesProvider>
         <Footer />
       </Router>

@@ -6,6 +6,7 @@ $footer-max-width: $content-max-width;
 //Blocks
 .footer {
   background-color: $footer-bg-color;
+  min-height: $footer-min-height;
   padding: $gutter 0;
   width: 100%;
 }

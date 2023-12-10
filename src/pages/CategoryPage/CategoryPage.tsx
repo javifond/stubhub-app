@@ -15,17 +15,15 @@ const CategoryPage = () => {
   if (!events || loading || error) return;
 
   return (
-    <main>
-      <div className={styles.container}>
-        <SearchBox />
+    <div className={styles.container}>
+      <SearchBox />
 
-        <ul className={styles.wrapper}>
-          {events.map((event, i) => (
-            <EventThumbnail key={i} event={event} />
-          ))}
-        </ul>
-      </div>
-    </main>
+      <ul className={styles.wrapper}>
+        {events.map((event, i) => (
+          <EventThumbnail key={i} event={event} />
+        ))}
+      </ul>
+    </div>
   );
 };
 
